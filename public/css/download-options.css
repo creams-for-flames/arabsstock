@@ -1,0 +1,51 @@
+.dp-btn{display: flex;width: 100%;justify-content: space-between;align-items: center}
+.dp-btn:focus{box-shadow: none}
+#downloadForm .dropdown-menu.show{width: 320px}
+.license-type{border: 1px solid #ccc;border-radius: 5px;padding: 10px}
+.layer{width: 100vw;height: 100vh;position: fixed;z-index: 5;background: #0000006e;visibility: hidden;transition: all linear .3s}
+body{overflow-x: hidden}
+#wrapper{padding-right: 0;transition: all .5s ease}
+.scrollable-content{overflow: hidden auto;padding: 10px 15px;width: 100%;}
+.fixedfooter{text-align: center}
+#sidebar-wrapper{overflow: hidden;z-index: 1000;position: fixed;width: 0;height: 100%;overflow-y: auto;background: #fff;transition: all .5s ease;transform: translate(17px, 0)}
+html[lang=en] #sidebar-wrapper{right: 365px;margin-right: -380px}
+html[lang=ar] #sidebar-wrapper{left: 365px;margin-left: -380px}
+#sidebar-wrapper .row{width: 390px}
+#wrapper.toggled #sidebar-wrapper{width: 400px}
+.toggled .layer{visibility: visible}
+html[lang=en] #wrapper.toggled #page-content-wrapper{margin-left: -410px}
+html[lang=ar] #wrapper.toggled #page-content-wrapper{margin-right: -410px}
+@media (min-width: 768px){
+    #sidebar-wrapper{width: 0}
+
+    #page-content-wrapper{position: relative}
+
+    html[lang=en] #wrapper.toggled #page-content-wrapper{margin-left: 0}
+
+    html[lang=ar] #wrapper.toggled #page-content-wrapper{margin-right: 0}
+}
+.license-type .form-check:last-child{
+    border-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+ul.nav.subscriptions .nav-link{
+
+}
+ul.nav.subscriptions .nav-link.active{
+    border-bottom: 2px solid #818181;
+}
+
+
+.removebg.form-check{
+    background: #f3f3f3;
+    padding: 20px 30px;
+    border-radius: 3px;
+}
+
+#downloadForm h2.credits-count{
+    color: #20d598;
+    font-size: 3.8rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    display: inline-block;
+}

@@ -1,0 +1,19 @@
+/* @import url(//fonts.googleapis.com/earlyaccess/notokufiarabic.css); */
+/* @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap'); */
+html , body {direction: rtl; font-weight: 600;}
+body
+{letter-spacing: -.5px;font-family: 'Cairo', sans-serif;
+ }
+.search-big-form .form-control {
+    padding-left: 0px;
+    padding-right: 45px;
+}
+.search-big-form .form-group i {
+    left: auto;
+    right: 15px;
+}
+.btn-dark {
+    color: #fff;
+    background-color: #30354b;
+    border-color: #30354b;
+}

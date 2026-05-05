@@ -1,0 +1,37 @@
+deploy_stage:
+  stage: deploy
+  image: tayeh/fedora-ssh-client
+  environment:
+    name: prod
+    url: https://stage.arabsstock.com
+  script:
+    - ip=$(curl ifconfig.co)
+    - curl -X POST -H "Content-Type:application/json" -H "Authorization:Bearer $DIGITALOCEAN_TOKEN" -d '{"inbound_rules":[{"protocol":"tcp","ports":"22","sources":{"addresses":["'$ip'"]}}]}' "https://api.digitalocean.com/v2/firewalls/$firewall/rules"
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | ssh-add -
+    - ssh $SERVER_USERNAME@$SERVER_HOST "cd /var/www/html/ramy-front && git checkout ramynew && git pull origin ramynew && exit"
+    - curl -X DELETE -H "Content-Type:application/json" -H "Authorization:Bearer $DIGITALOCEAN_TOKEN" -d '{"inbound_rules":[{"protocol":"tcp","ports":"22","sources":{"addresses":["'$ip'"]}}]}' "https://api.digitalocean.com/v2/firewalls/$firewall/rules"
+  only:
+    - ramynew
+
+deploy_prod:
+  stage: deploy
+  image: tayeh/fedora-ssh-client
+  environment:
+    name: producation
+    url: https://arabsstock.com
+  script:
+    - ip=$(curl ifconfig.co)
+    - curl -X POST -H "Content-Type:application/json" -H "Authorization:Bearer $DIGITALOCEAN_TOKEN" -d '{"inbound_rules":[{"protocol":"tcp","ports":"22","sources":{"addresses":["'$ip'"]}}]}' "https://api.digitalocean.com/v2/firewalls/$firewall/rules"
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY_prod" | ssh-add -
+    - ssh root@167.172.169.102 "cd /home/app/code && git checkout master && git pull origin master && exit"
+    - curl -X DELETE -H "Content-Type:application/json" -H "Authorization:Bearer $DIGITALOCEAN_TOKEN" -d '{"inbound_rules":[{"protocol":"tcp","ports":"22","sources":{"addresses":["'$ip'"]}}]}' "https://api.digitalocean.com/v2/firewalls/$firewall/rules"
+  only:
+    - master

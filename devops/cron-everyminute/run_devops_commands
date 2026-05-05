@@ -1,0 +1,13 @@
+#!/bin/bash
+
+parent_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P  )
+for f in $parent_path/../../storage/devops_commands/*; do
+    devops_command=`basename $f`
+
+    if [ "$devops_command" == "nginx_reload" ]; then
+        echo "$devops_command";
+        sudo rm -f "$f";
+        sudo service nginx reload
+    fi
+
+done

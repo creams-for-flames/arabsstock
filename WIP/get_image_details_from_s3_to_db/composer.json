@@ -1,0 +1,12 @@
+{
+    "name": "ahed/get_image_details_from_s3_to_db",
+    "authors": [
+        {
+            "name": "Ahed91",
+            "email": "ahedeid@gmail.com"
+        }
+    ],
+    "require": {
+        "tightenco/collect": "^7.6"
+    }
+}

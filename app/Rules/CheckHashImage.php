@@ -1,0 +1,54 @@
+<?php
+
+namespace App\Rules;
+
+use Illuminate\Contracts\Validation\Rule;
+
+class CheckHashImage implements Rule
+{
+    /**
+     * Create a new rule instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        //
+    }
+
+    /**
+     * Determine if the validation rule passes.
+     *
+     * @param string $attribute
+     * @param mixed $value
+     * @return bool
+     */
+    public function passes($attribute, $value)
+    {
+        $pass = FALSE;
+        try {
+            $data_hash = hash_file('sha256', $value->path());
+            \Log::channel('info')->info('Rule CheckHashImage : ' . $data_hash);
+            $hash = \DB::table('stock')->where('hash', 'like', '%' . $data_hash . '%')->select('id', 'hash')->first();
+            if (!$hash)
+                $hash = \DB::table('contributor_images')->where('hash', 'like', '%' . $data_hash . '%')->select('id', 'hash')->first();
+
+            $pass = $hash ? FALSE : TRUE;
+        } catch (\Throwable $th) {
+            \Log::error('Rule CheckHashImage contributor error : ' . $th->getMessage() . ' line: ' . $th->getLine());
+            return $pass;
+        }
+        return $pass;
+    }
+
+    /**
+     * Get the validation error message.
+     *
+     * @return string
+     */
+    public function message()
+    {
+        return __('validation.file_danger_copyright');
+
+    }
+}

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+temp_file_name=/tmp/laravel-log-MD5
+touch $temp_file_name
+
+nchksum=`md5sum /var/www/storage/logs/laravel.log | awk -F " " '{print $1}'`
+ochksum=`cat $temp_file_name`
+
+if [ "$nchksum" == "$ochksum" ]; then
+  true
+else
+  current_year=`date +%Y`
+  /usr/local/bin/slack \'`tail -100 /var/www/storage/logs/laravel.log | grep --color=never $current_year | tail -1 | sed -n -e 's/".*$//p' `\'
+  echo "new error in laravel.log"
+fi
+
+echo $nchksum > $temp_file_name
+

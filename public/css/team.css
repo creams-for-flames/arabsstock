@@ -1,0 +1,80 @@
+@media (min-width: 320px) and (max-width: 767px){
+    footer{
+        margin-top: 4rem;}
+}
+.item .icon{
+    height: 30px !important;
+}
+.item .foot{
+    height: auto;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    padding: 3px 10px;
+    width: auto;
+    cursor: pointer;
+    font-weight: bold;
+}
+select{
+    width: 60px !important;
+    display: inline !important;
+}
+.team-page table thead{
+    background: #ffffff;
+}
+.team-page table .first-ch{
+    background: #20d598;
+    padding: 5px;
+    text-align: center;
+    font-size: 14px;
+    color: #ffffff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-bottom: 0;
+}
+.team-page table thead tr th {
+border-top: none}
+.table td{
+    padding: 12px;
+}
+.modal-header-title{
+    font-size: 28px;
+}
+.swal-title{
+    font-size: 20px;
+    color: #000;
+}
+.swal-text{font-size: 14px;color: #9b9b9b}
+
+
+
+.dataTables_wrapper .custom-select{
+    padding: 0;
+    border: 1px solid #ced4da;
+    width: unset;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: none;
+    height: 36px;
+    text-align: center;
+    margin: 0 5px;
+}
+
+.dataTables_info{
+    margin-bottom: 10px;
+}
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: left!important;
+}
+
+.account ul.pagination li:first-child,.account ul.pagination li:last-child{
+    border-top-right-radius:0;
+}
+.account ul.pagination li{
+    border:unset;
+}
+.account ul.pagination li:first-child a ,.account ul.pagination li:last-child a{
+    line-height: 1.25;
+    font-size: 1rem;
+}

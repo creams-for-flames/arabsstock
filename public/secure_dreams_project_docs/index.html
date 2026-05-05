@@ -1,0 +1,36 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://unpkg.com/stackedit-js@1.0.7/docs/lib/stackedit.min.js"></script>
+</head>
+
+<body>
+    <textarea style="display:none;"></textarea>
+    <a href="#" onclick="window.location.reload()">اضغط هنا لتشغيل المحرر</a>
+    <script>
+ var xhReq = new XMLHttpRequest();
+ xhReq.open("GET", "docs.md?v=" + Date.now(), false);
+ xhReq.send(null);
+ var serverResponse = xhReq.responseText;
+
+  const el = document.querySelector('textarea');
+  el.value = serverResponse
+  const stackedit = new Stackedit();
+
+  // Open the iframe
+  stackedit.openFile({
+    // name: 'Filename', // with an optional filename
+    content: {
+      text: el.value // and the Markdown content.
+    }
+  });
+
+  // Listen to StackEdit events and apply the changes to the textarea.
+  stackedit.on('fileChange', (file) => {
+    el.value = file.content.text;
+  });
+    </script>
+</body>
+</html>

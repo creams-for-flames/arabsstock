@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+echo "### Deploy Arabsstock $(date)"
+project_dir=$PWD
+
+changed_files="$(git diff-tree -r --name-only --no-commit-id HEAD^ HEAD)"
+if echo "$changed_files" | grep --quiet "js_apps/"; then
+     git checkout resources/views/admin_v2/image/warehouse/index.blade.php
+     cd "$project_dir/js_apps"
+
+     echo 'install js_apps deps'
+     npm install --silent
+
+     echo 'start building js_apps'
+     npm run build > /dev/null 2>&1
+
+     echo 'update js paths'
+     git checkout ../resources/views/admin_v2/image/warehouse/index.blade.php
+     file_name=`ls ../public/js_apps_assets/js/  | grep --color=never image_store`
+     sed -i  -E "s/image_store.js/$file_name/" ../resources/views/admin_v2/image/warehouse/index.blade.php ../resources/views/admin_v2/image/warehouse/index.blade.php
+     file_name=`ls ../public/js_apps_assets/js/  | grep --color=never chunk-vendors`
+     sed -i  -E "s/chunk-vendors.js/$file_name/" ../resources/views/admin_v2/image/warehouse/index.blade.php ../resources/views/admin_v2/image/warehouse/index.blade.php
+     file_name=`ls ../public/js_apps_assets/css/  | grep --color=never image_store`
+     sed -i  -E "s/image_store.css/$file_name/" ../resources/views/admin_v2/image/warehouse/index.blade.php ../resources/views/admin_v2/image/warehouse/index.blade.php
+     file_name=`ls ../public/js_apps_assets/css/  | grep --color=never chunk-vendors`
+     sed -i  -E "s/chunk-vendors.css/$file_name/" ../resources/views/admin_v2/image/warehouse/index.blade.php ../resources/views/admin_v2/image/warehouse/index.blade.php
+fi

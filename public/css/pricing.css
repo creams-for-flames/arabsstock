@@ -1,0 +1,408 @@
+.inner-tabs .nav-link.active{
+    background-color: #ededed;
+}
+
+.inner-tabs .nav-link{
+    border: 1px solid #ededed;
+}
+
+.upper-tabs .nav-tabs .nav-link:hover{
+    border: 0 !important;
+    background: #00000057;
+}
+
+
+.upper-tabs .nav-tabs .nav-link.active{
+    border: 0 !important;
+    background: #00000000;
+    border-bottom: 3px solid #fff !important;
+    color: #fff;
+}
+
+.brief{
+    background-color: #0070f0;
+    border-top-left-radius: 5px;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+    padding: 5px 0;
+    border-top-right-radius: 5px;
+}
+
+/*.mytabs .col-md-4:nth-child(2){*/
+/*    position: relative;*/
+/*    top: -20px;*/
+/*}*/
+
+.upper-tabs .nav-tabs{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+    border-bottom: 0;
+}
+
+.upper-tabs .nav-item a{
+    color: #fff;
+}
+
+.inner-tabs{
+    border: 0 !important;
+    display: flex;
+    justify-content: center;
+}
+
+.inner-tabs .nav-tabs .nav-item.show .nav-link, .inner-tabs .nav-tabs .nav-link.active{
+
+}
+.inner-tabs .nav-link{
+    margin-bottom: 0;
+    border-radius: 20px;
+}
+
+.inner-tabs{
+    border: 0 !important;
+}
+.priceBlock{
+    border-radius: 15px;
+    text-align: center;
+    height: 100%;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+.price-h2::after {
+    content: "$";
+    font-size: 15px;
+    position: absolute;
+    top: 10px;
+    right: -5px;
+}
+.priceBlock .nav-link {
+    padding: 0.5rem;
+}
+.brief + .priceBlock {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: 0;
+}
+@media (max-width: 1350px){
+    .all-choices .choice{
+        padding: 5px 6px;
+    }
+}
+
+.priceBlock small {
+    color: #000;
+}
+
+.price-tag{
+    text-align: center;
+}
+
+
+.price-tag sup{
+    position: relative;
+    font-size: 30px;
+    top: -15px;
+}
+
+.price-tag span{
+    font-size: 3.5rem;
+}
+
+.price-tag sub{
+    font-weight: 600;
+    font-size: 75%;
+}
+
+/* ============================================================ */
+
+.mytable thead tr:first-of-type th{
+    border-top: 0;
+}
+
+.mytable th{
+    font-weight: 400;
+}
+.mytable td{
+    text-align: center;
+}
+/* ============================================================ */
+
+.industry-leading{
+    background: #f3f3f3;
+    padding: 30px;
+}
+
+.leading-block{
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #fff;
+}
+
+.leading-block i{
+    font-size: 3rem;
+}
+/* ============================================================ */
+.faq{
+    padding: 30px;
+    text-align: center;
+}
+.faq .card-header{
+    padding: 5px 10px;
+    background-color: #fff;
+}
+.faq .btn-lg{
+    border-radius: 2rem;
+    padding: 10px 5rem;
+}
+/* ============================================================ */
+.contact{
+    background-image: url("../img/pricing-bg.jpg");
+    background-size: cover;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.contact .btn-lg{
+    border-radius: 2rem;
+    padding: 10px 5rem;
+}
+.form-control:focus{
+    border: none !important;
+    box-shadow: none !important;
+}
+select.form-control{
+    border: none;
+    border-bottom: 1px solid #c7c7c7;
+}
+
+[plan-description]{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+}
+.bootstrap-select .btn-light{
+    color: #212529;
+    background-color: #fff;
+    border: 1px solid #20d598;
+    padding: 9px;
+}
+.bootstrap-select .btn-light:hover{
+    color: #212529;
+    background-color: #f6f6f7;
+    border: 1px solid #f6f6f7;
+}
+
+.bootstrap-select, .bootstrap-select *, .bootstrap-select .dropdown-toggle:focus, .bootstrap-select > select.mobile-device:focus + .dropdown-toggle,
+.bootstrap-select .dropdown-toggle:focus, .bootstrap-select > select.mobile-device:focus + .dropdown-toggle,
+.bootstrap-select .dropdown-toggle:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+.btn-light:not(:disabled):not(.disabled).active, .btn-light:not(:disabled):not(.disabled):active, .show > .btn-light.dropdown-toggle{
+    background-color: #eeeef1;
+    border-color: #eeeef1;
+}
+.text-muted{
+    color: #5e5d5d !important;
+}
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@import url(https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap);
+body,
+html{
+    font-family: Cairo, sans-serif;
+    font-weight: 600;
+    color: #30354b !important;
+    font-size: 14px !important;
+    line-height: 1.5;
+    letter-spacing: 0;
+    height: 100%;
+}
+
+.summery{
+    font-weight: bold;
+    text-align: right;
+    margin-top: 30px;
+}
+
+.all-choices{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.all-choices .choice{
+    background-color: #f2f4f6;
+    padding: 5px 13px;
+    border-radius: 5px;
+}
+.business {
+  background-image: url('../../img/business/BG.jpg');
+  background-attachment: fixed;
+  min-height: 20rem;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  position: relative;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.business .layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #1e1c1c5c;
+}
+
+.business > .container-fluid {
+    position: relative;
+    z-index: 1;
+}
+
+.business .details, .business .cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.business .details div {
+    font-size: 20px;
+    line-height: 18px;
+}
+.business .cta {
+    align-items: flex-end;
+}
+.business .btn-transparent {
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.business .btn-transparent:hover {
+    background-color: #20d598;
+    border: 1px solid #20d598;
+}
+
+.business h2 {
+    font-weight: 600;
+    font-size: 60px;
+}
+.all-choices .choice i{
+    color: #20d598;
+}
+
+.payment-method{
+    display: flex;
+    padding: 0px 5px;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #20d598;
+}
+
+.case2-grid{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-gap: 20px;
+}
+
+.my-tabs .active{
+    background-color: #2f3649 !important;
+}
+.my-tabs .active span{
+    color: #fff !important;
+}
+
+@media (max-width: 1200px){
+    .all-choices{
+        display: block !important;
+    }
+
+    .case2-grid{
+        grid-template-columns: 1fr;
+    }
+}
+.disabled-selection{
+    background-color: #fff !important;
+    border: 1px solid #ededed;
+    cursor: not-allowed;
+    color: #bbb;
+}
+.disabled-selection i{
+    color: #bbb !important;
+}
+.plans-table thead th{
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    font-weight: 600 !important;
+    color: #fff;
+}
+.plans-table td, .plans-table th {
+    padding: 1rem !important
+}
+.plans-table tbody {
+    box-shadow: inset 0 0 0 1px #ccc;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+.plans-table thead {
+    background: #2f3649 !important
+}
+[dir="rtl"] .plans-table thead tr th:first-child {
+    border-top-right-radius: 15px !important;
+}
+[dir="ltr"] .plans-table thead tr th:first-child {
+    border-top-left-radius: 15px !important;
+}
+[dir="rtl"] .plans-table thead tr th:last-child {
+    border-top-left-radius: 15px !important;
+}
+[dir="ltr"] .plans-table thead tr th:last-child{
+    border-top-right-radius: 15px !important;
+}
+[dir="rtl"] .plans-table tbody tr:last-child td:last-child{
+    border-bottom-left-radius: 15px !important;
+}
+[dir="ltr"] .plans-table tbody tr:last-child td:last-child{
+    border-bottom-right-radius: 15px !important;
+}
+
+.sldier-credits > div > div{
+    border: 1px solid #ededed;
+    border-radius: 20px;
+    padding: 0.5rem 0.7rem !important;
+}
+.slider{
+    -webkit-appearance: none;
+    width: 100%;
+    height: 7px;
+    border-radius: 5px;
+    background: #e5e3e3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #1fd698;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #1fd698;
+    cursor: pointer;
+}
+input#credits_count{
+    height: 7px;
+    border-radius: 7px;
+}

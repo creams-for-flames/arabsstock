@@ -1,0 +1,18 @@
+#!/bin/bash
+
+temp_file_name=/tmp/slow-query-log-MD5
+touch $temp_file_name
+
+nchksum=`md5sum /var/log/mysql/slow-query.log | awk -F " " '{print $1}'`
+ochksum=`cat $temp_file_name`
+
+if [ "$nchksum" == "$ochksum" ]; then
+  true
+else
+  /usr/local/bin/slack "new slow query"
+  echo "new slow query"
+fi
+
+echo $nchksum > $temp_file_name
+
+

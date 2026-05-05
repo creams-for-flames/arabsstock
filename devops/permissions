@@ -1,0 +1,1 @@
+sudo chown -R www-data:www-data storage/ bootstrap/cache/ public/feeds/ public/hooks/ public/img-public/category/ public/temp/ public/tempVideo/ public/test_imagga_computer_vision_tags/ public/uploads/  public/nginx.conf

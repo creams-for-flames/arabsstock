@@ -1,0 +1,167 @@
+@font-face {
+    font-family: "DejaVuSans";
+    src: url("../fonts/DejaVuSans.ttf"),
+        url("../fonts/DejaVuSansCondensed-Bold.ttf") format("truetype"),
+        url("../fonts/DejaVuSans-Oblique.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "DejaVuSans", sans-serif;
+}
+
+.m-0 {
+    margin: 0px;
+}
+
+.p-0 {
+    padding: 0px;
+}
+
+.pt-5 {
+    padding-top: 5px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-85 {
+    width: 85%;
+}
+
+.w-15 {
+    width: 15%;
+}
+
+.logo img {
+    /* width:45px;
+        height:45px;
+        padding-top:30px; */
+}
+
+.logo span {
+    margin-left: 8px;
+    top: 19px;
+    position: absolute;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.gray-color {
+    color: #5d5d5d;
+}
+
+.text-bold {
+    font-weight: bold !important;
+}
+
+.border {
+    border: 1px solid black;
+}
+
+table tr,
+th,
+td {
+    border: 1px solid #d2d2d2;
+    border-left: unset;
+    border-right: unset;
+    border-top: unset;
+    padding: 7px 8px;
+}
+
+table tr th {
+    background: #e9e9e9;
+    font-size: 14px;
+}
+
+table tr td {
+    font-size: 13px;
+}
+
+.box-text p {
+    line-height: 10px;
+}
+
+.float-left {
+    float: left !important;
+}
+
+.total-part {
+    font-size: 16px;
+    line-height: 12px;
+}
+
+.total-right p {
+    padding-right: 20px;
+}
+
+.add-detail {
+    font-size: 12px;
+    /* text-align: center !important; */
+}
+
+body {
+    margin: 70px;
+}
+
+tr.b-none td {
+    border: none !important;
+    padding: 3px;
+    margin: 0;
+}
+
+.details {
+    padding-right: 0;
+}
+
+.amount {
+    background-color: #e9e9e9 !important;
+    line-height: 25px !important;
+    font-weight: bold !important;
+}
+
+.for {
+    margin-top: 2rem;
+}
+
+.from strong, .for strong {
+    margin-bottom: 10px;
+    display: inline-block
+}
+
+.table-footer {
+    width: 30rem;
+    margin: 20px 0 0 auto;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
